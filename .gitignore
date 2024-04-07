@@ -1,0 +1,9 @@
+data/
+zillow_env/
+flow_chart/
+airflow/zillow_api.json
+airflow/logs/
+airflow/standalone_admin_password.txt
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
