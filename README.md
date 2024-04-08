@@ -31,7 +31,7 @@ This Tableau dashboard showcases current properties for sale in San Diego, cente
 Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/SanDiegoForSalePropertyZoo)
 
 
-![dataflow](./visualization/screenshot%20.png)
+![dataflow](./visualization/screenshot.png)
 
 
 
@@ -53,4 +53,4 @@ An [Airflow DAG](./airflow/dags/zillow_analytics.py) orchestrates all the tasks 
 > What is Snowpipe?
 >> Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
 
-You can find the SQL file that handles the process in the [snowflake folder](./snowflake/)
+You can find the SQL file that handles the process in the [snowflake folder](./snowflake/snowflake_sql.sql)
