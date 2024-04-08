@@ -1,7 +1,7 @@
 # San Diego Zillow Housing Data Pipeline Project
 
 
-### ==Why I Chose to Study San Diego Housing Market Data?==
+### Why I Chose to Study San Diego Housing Market Data?
 
 If you've been following the US real estate market during COVID-19, you've seen that the price has risen sharply. San Diego's no different, with remote work boosting house prices as people move to the city. Limited housing inventory adds to the competition. Looking to buy in San Diego? This project gathers all available properties for sale, making your search easier.
 
