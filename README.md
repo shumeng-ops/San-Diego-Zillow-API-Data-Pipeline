@@ -30,9 +30,8 @@ This Tableau dashboard showcases current properties for sale in San Diego, cente
 
 Check out the dynamic dashboard on Tableau Public [here](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/SanDiegoForSalePropertyZoo)
 
-![Dashboard](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/visualization/tableau%20screenshot.png)
 
-
+<img src="https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/visualization/tableau%20screenshot.png" width="100" height="100"/>
 
 
 
