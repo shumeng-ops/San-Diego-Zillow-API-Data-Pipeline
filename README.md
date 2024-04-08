@@ -51,6 +51,6 @@ An [Airflow DAG](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeli
 #### Part 2: Create Snowflake Warehouse + SnowPipe
 
 > What is Snowpipe?
-Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
+> Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
 
 You can find the SQL file that handles the process in the [snowflake folder](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/tree/main/snowflake)
