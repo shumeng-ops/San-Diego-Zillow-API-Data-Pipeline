@@ -26,14 +26,15 @@ estimated_price_sqft FLOAT
 );
 
 
---create file format which used for create tables from external S3
+-- Create a file format specifically designed for creating tables from external S3 storage.
 CREATE OR REPLACE FILE FORMAT zillow_database.zillow_schema.format_csv
     type='CSV'
     field_delimiter =','
     record_delimiter = '\n'
     skip_header=1
     FIELD_OPTIONALLY_ENCLOSED_BY = '0x22'
-
+    
+-- Create a stage where data files are stored (staged) for loading and unloading data.
 CREATE OR REPLACE STAGE zillow_schema.zillow_ext_stage
     url='s3://zillow-transform-data-bucket/'
     credentials=(

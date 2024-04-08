@@ -37,3 +37,15 @@ Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau
 
 ### Technical Details
 
+#### Part 1: Get data via API + Transform + Storage in S3
+An [Airflow DAG](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/airflow/dags/zillow_analytics.py) orchestrates all the tasks mentioned above, and it consists of a total of 7 individual tasks:
+1. zillow_sale_data : Retrieve property data labeled as "forSale" from zillow.com using the RAPID API 
+2. zillow_sold_data: Retrieve property data labeled as "RecentlySold" from zillow.com using the RAPID API
+3. zillow_rent_data: Retrieve property listings labeled as "forRent" from zillow.com using the RAPID API
+4. combine_zillow: Merge multiple CSV files generated from the preceding 3 steps into a single large CSV file
+5. remove_duplicate: Remove duplicate entries of properties based on their unique identifier (zpid), considering that some properties may have records for both being available for rent and recently sold
+6. upload_raw_to_s3: Once the duplicate records are removed, upload the raw data in CSV format to the S3 raw bucket
+7. data_transform: Clean the data by filling in missing values, excluding outliers, and performing other necessary transformation
+8. upload_transform_to_s3: Upload the processed data to the S3 transform bucket in CSV format
+
+#### Part 2: Create Snowflake Warehouse + SnowPipe
