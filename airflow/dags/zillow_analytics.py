@@ -31,7 +31,7 @@ default_args = {
 
 
 
-with DAG('zillow_extract_combine',
+with DAG('zillow_API_transform_S3',
           default_args=default_args,
           #schedule_interval='@daily',
           catchup=False
@@ -69,27 +69,13 @@ with DAG('zillow_extract_combine',
                         'combined_file':'/Users/shumengshi/Career/2024-data-engineering-zoomcamp/Zillow_Project/data/combined_zillow.csv'}
                         )
 
-
-        zillow_sale_data >> zillow_sold_data >> zillow_rent_data >> combine_zillow
-
-
-
-with DAG('zillow_raw_data_to_s3',
-          default_args=default_args,
-          #schedule_interval='@daily',
-          catchup=False
-          ) as dag:
-        
-
-
         remove_duplicate = PythonOperator(
                 task_id='remove_duplicate',
                 python_callable=remove_duplicate,
                 op_kwargs={'raw_file':'/Users/shumengshi/Career/2024-data-engineering-zoomcamp/Zillow_Project/data/combined_zillow.csv',
                            'dedupe_file':'/Users/shumengshi/Career/2024-data-engineering-zoomcamp/Zillow_Project/data/deduped_zillow.csv'}
                         )
-        
-
+                        
         upload_raw_to_s3 = PythonOperator(
                 task_id='upload_to_s3',
                 python_callable=upload_to_s3,
@@ -98,15 +84,6 @@ with DAG('zillow_raw_data_to_s3',
                            'bucket_name':target_raw_bucket_name,
                            'key':'zillow_deduped_data.csv'}
                         )
-        
-
-        remove_duplicate >> upload_raw_to_s3
-
-with DAG('zillow_data_transform',
-          default_args=default_args,
-          #schedule_interval='@daily',
-          catchup=False
-          ) as dag:
         
         data_transform = PythonOperator(
                 task_id='data_transform',
@@ -124,5 +101,8 @@ with DAG('zillow_data_transform',
                            'bucket_name':target_transform_bucket_name,
                            'key':'zillow_transform_data.csv'}
                         )
-        
-        data_transform >> upload_transform_to_s3
+
+        zillow_sale_data >> zillow_sold_data >> zillow_rent_data >> combine_zillow >> remove_duplicate >> upload_raw_to_s3 >> data_transform >> upload_transform_to_s3
+
+
+
