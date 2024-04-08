@@ -22,7 +22,7 @@ If you've been following the US real estate market during COVID-19, you've seen 
 
 
 ### Diagram of the Data Pipeline
-![Pipeline Diagram](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/visualization/data%20pipeline.gif)
+![Pipeline Diagram](./visualization/data%20pipeline.gif)
 
 ### Visualization
 
@@ -31,14 +31,14 @@ This Tableau dashboard showcases current properties for sale in San Diego, cente
 Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/SanDiegoForSalePropertyZoo)
 
 
-<img src="https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/visualization/screenshot%20.png"/>
+![dataflow](./visualization/screenshot%20.png)
 
 
 
 ### Technical Details
 
 #### Part 1: Get data via API + Transform + Storage in S3
-An [Airflow DAG](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/airflow/dags/zillow_analytics.py) orchestrates all the tasks mentioned above, and it consists of a total of 7 individual tasks:
+An [Airflow DAG](./airflow/dags/zillow_analytics.py) orchestrates all the tasks mentioned above, and it consists of a total of 7 individual tasks:
 1. zillow_sale_data : Retrieve property data labeled as "forSale" from zillow.com using the RAPID API 
 2. zillow_sold_data: Retrieve property data labeled as "RecentlySold" from zillow.com using the RAPID API
 3. zillow_rent_data: Retrieve property listings labeled as "forRent" from zillow.com using the RAPID API
@@ -51,6 +51,6 @@ An [Airflow DAG](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeli
 #### Part 2: Create Snowflake Warehouse + SnowPipe
 
 > What is Snowpipe?
-> Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
+>> Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
 
-You can find the SQL file that handles the process in the [snowflake folder](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/tree/main/snowflake)
+You can find the SQL file that handles the process in the [snowflake folder](./snowflake/)
