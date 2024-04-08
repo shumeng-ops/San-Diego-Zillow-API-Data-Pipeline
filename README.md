@@ -12,7 +12,7 @@ If you've been following the US real estate market during COVID-19, you've seen 
 * Finally, Tableau is used to visualize the properties for sale, showcasing details like price, bathrooms, bedrooms, and address.
 
 ### Diagram of the Data Pipeline
-![Pipeline Diagram](/visualization/data pipeline.gif)
+![Pipeline Diagram](https://github.com/shumeng-ops/San-Diego-Zillow-API-Data-Pipeline/blob/main/visualization/data%20pipeline.gif)
 
 
 
