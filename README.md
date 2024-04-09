@@ -31,11 +31,12 @@ This Tableau dashboard showcases current properties for sale in San Diego, cente
 Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/ZillowDataMap)
 
 
-![dataflow](./visualization/screenshot.png)
+![visual_spacial](./visualization/screenshot_spacial.png)
 
 
 The second visualization shows the average price per square foot for each zip code. The darker the shade of red, the higher the price. It's clear that areas closer to the beach have higher average prices.
 
+![visual_zipcode](./visualization/screenshot_zipcode.png)
 
 ### Technical Details
 
