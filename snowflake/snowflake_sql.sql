@@ -68,3 +68,11 @@ WHERE PROPERTYPE IN ('singleFamily','townhome')
 AND PRICEPERSQUAREFOOT<=10000);
 
 ;
+
+
+create or replace table zillow_database.zillow_analytics.price_sqft_zipcode as (
+SELECT zipcode, avg(pricepersquarefoot)  as pricepersquarefoot
+FROM zillow_database.zillow_schema.zillow_san_diego 
+WHERE PROPERTYPE IN ('singleFamily','townhome')
+AND PRICEPERSQUAREFOOT<=10000
+group by 1);
