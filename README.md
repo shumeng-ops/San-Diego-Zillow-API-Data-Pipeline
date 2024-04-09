@@ -54,3 +54,26 @@ An [Airflow DAG](./airflow/dags/zillow_analytics.py) orchestrates all the tasks 
 >> Snowpipe is a data ingestion service offered by Snowflake. In this project,whenever a new file is added to the specified S3 buckets, AWS S3 sends a notification to Snowpipe. Snowpipe then copies the file from the S3 bucket to a table in the Snowflake warehouse.
 
 You can find the SQL file that handles the process in the [snowflake folder](./snowflake/snowflake_sql.sql)
+
+
+### Instructions for Reproduce
+
+#### Accounts for Tools Needed:
+1. Sign up for the free tier of Amazon AWS to access S3, which gives you 5 GB of storage per month.
+2. Sign up for Snowflake free trial.
+3. Create an account on Rapid API and subscribe to the [zillow.com API.](https://rapidapi.com/ntd119/api/zillow-com4/)
+4. Install Airflow on your local machine.
+
+#### Steps to Reproduce
+1. Generate an AWS access key ID and secret access key, then substitute them for the placeholders in the [snowflake sql file](./snowflake/snowflake_sql.sql)
+2. Store your RAPID API key in its own file, then import it into your DAG.
+3. Change all absolute file paths in the repository to match your local paths.
+4. Start Airflow instance and run the DAG "zillow_API_transform_S3"
+5. Import the sql file into snowflake, and run the script, then you will have the output data readyBring in the SQL file into Snowflake, execute the script, and afterward, your output data will be prepared.
+
+
+
+
+
+
+
