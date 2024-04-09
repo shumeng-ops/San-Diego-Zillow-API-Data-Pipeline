@@ -28,11 +28,13 @@ If you've been following the US real estate market during COVID-19, you've seen 
 
 This Tableau dashboard showcases current properties for sale in San Diego, centered around a location of your choice, like San Diego Zoo. Often, when people search for potential properties, they aim to be near specific locations such as their workplace or their children's school. This dashboard facilitates this search by allowing users to set a radius limit (X miles) from their chosen center location. Viewers can set a radius limit for their search (e.g., X miles) from this center point. The dashboard displays all available properties within this radius, color-coded by price per square foot. Hovering over a property reveals key details like address, bedrooms, bathrooms, and listing price.
 
-Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/SanDiegoForSalePropertyZoo)
+Check out the dynamic dashboard on Tableau Public [here.](https://public.tableau.com/app/profile/shumeng.shi/viz/SanDiegoZonePropertySalesAnalysis/ZillowDataMap)
 
 
 ![dataflow](./visualization/screenshot.png)
 
+
+The second visualization shows the average price per square foot for each zip code. The darker the shade of red, the higher the price. It's clear that areas closer to the beach have higher average prices.
 
 
 ### Technical Details
